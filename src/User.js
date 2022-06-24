@@ -8,9 +8,15 @@ class User extends Component{
             user: {}
         };
     }
+    async componentDidUpdate(prevProps){
+        if(prevProps.selectedUserId !== this.props.selectedUserId){
+            const user = (await axios.get(`/api/users/${this.props.selectedUserId}`)).data;
+            this.setState({ user });
+        }
+    }
     async componentDidMount(){
         const user = (await axios.get(`/api/users/${this.props.selectedUserId}`)).data;
-        console.log(user);
+        this.setState({ user });
     }
     render(){
         const { user } = this.state;

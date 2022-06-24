@@ -30,7 +30,7 @@ class App extends Component{
                     {
                         users.map(user => {
                             return (
-                                <li key={ user.id }>
+                                <li className={ selectedUserId*1 === user.id ? 'selected' : ''} key={ user.id }>
                                     <a href={`#${user.id}`}>
                                     { user.name }
                                     </a>

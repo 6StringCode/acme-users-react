@@ -3,3 +3,11 @@ body {
     padding: 1rem;
 }
 
+.selected {
+    background-color: darkorchid;
+}
+
+.selected a {
+    color: cornsilk;
+}
+

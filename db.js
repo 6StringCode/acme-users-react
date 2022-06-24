@@ -11,7 +11,7 @@ const User = conn.define('user', {
     hooks: {
         beforeCreate: function(user){
             if(!user.bio){
-                user.bio = `${user.name}. ${faker.lorem.paragraphs(3)}. ${user.name}.`;
+                user.bio = `${user.name}. ${faker.lorem.paragraphs(3)} ${user.name}.`;
             }
         }
     }
